@@ -1,3 +1,4 @@
+
 # HOMEWORK 2 --- ES2
 # Triangle Calculator
 
@@ -54,23 +55,29 @@ def heronsformula(a, b, c):
     # Calculate the area of a triangle with three known side lengths.
     # You may want to look up Heron's formula online.
     # Heron's formula: S = (a+b+c/2), area = sqrt(s(s-a)(s-b)(s-c))
+    S= (a+b+c)/2
 
-    area = math.sqrt(((a+b+c)/2)*(((a+b+c)/2)-a)*(((a+b+c)/2)-b)*(((a+b+c)/2)-c)) #replace this with your calculation for area
+    area = math.sqrt((S)*((S)-a)*((S)-b)*((S)-c)) #replace this with your calculation for area
     return area
 
 def areaofatriangle(m1, b1, m2, b2, m3, b3):
     #Using the three functions above, now calculate the area of a
     #triangle when the three sides are described by three linear equations
     #y = (m1 * x) + b1;  y = (m2 * x) + b2; and y = (m3 * x) + b3
-    x1 = (b2-b1)/(m1-m2)
-    x2 = (b3-b2)/(m2-m3)
-    x3 = (b1-b3)/(m3-m1)
-    y1 = (m1*((b2-b1)/(m1-m2)))+b1
-    y2 = (m2*((b3-b2)/(m2-m3)))+b2
-    y3 = (m3*((b1-b3)/(m3-m1)))+b3
-    a = math.sqrt(((x2-x1)**2)+(y2-y1)**2)
-    b = math.sqrt(((x3-x2)**2)+(y3-y2)**2)
-    c = math.sqrt(((x1-x3)**2)+(y1-y2)**2)
+    x1= intersectionoftwolines_x(m1, b1, m2, b2)
+    x2=intersectionoftwolines_x(m2, b2, m3, b3)
+    x3=intersectionoftwolines_x(m3, b3, m1, b1)
+
+    y1=intersectionoftwolines_y(m1, b1, m2, b2)
+    y2=intersectionoftwolines_y(m2, b2, m3, b3)
+    y3=intersectionoftwolines_y(m3, b3, m1, b1)
+
+    a=distancebetweenpoints(x1, y1, x2, y2)
+    b=distancebetweenpoints(x2, y2, x3, y3)
+    c=distancebetweenpoints(x3, y3, x1, y1)
+
+    heronsformula(a, b, c)
+
     area = math.sqrt(((a+b+c)/2)*(((a+b+c)/2)-a)*(((a+b+c)/2)-b)*(((a+b+c)/2)-c)) #replace this with your calculation for area
     return area
 
