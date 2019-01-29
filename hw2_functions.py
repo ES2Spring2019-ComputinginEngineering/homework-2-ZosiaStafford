@@ -62,9 +62,16 @@ def areaofatriangle(m1, b1, m2, b2, m3, b3):
     #Using the three functions above, now calculate the area of a
     #triangle when the three sides are described by three linear equations
     #y = (m1 * x) + b1;  y = (m2 * x) + b2; and y = (m3 * x) + b3
-
-
-    area = 0 #replace this with your calculation for area
+    x1 = (b2-b1)/(m1-m2)
+    x2 = (b3-b2)/(m2-m3)
+    x3 = (b1-b3)/(m3-m1)
+    y1 = (m1*((b2-b1)/(m1-m2)))+b1
+    y2 = (m2*((b3-b2)/(m2-m3)))+b2
+    y3 = (m3*((b1-b3)/(m3-m1)))+b3
+    a = math.sqrt(((x2-x1)**2)+(y2-y1)**2)
+    b = math.sqrt(((x3-x2)**2)+(y3-y2)**2)
+    c = math.sqrt(((x1-x3)**2)+(y1-y2)**2)
+    area = math.sqrt(((a+b+c)/2)*(((a+b+c)/2)-a)*(((a+b+c)/2)-b)*(((a+b+c)/2)-c)) #replace this with your calculation for area
     return area
 
 
