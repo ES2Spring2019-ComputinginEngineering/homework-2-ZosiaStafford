@@ -26,7 +26,10 @@ import math #This line allows you to use math functions. Importantly, math.sqrt(
 def intersectionoftwolines_x(m1, b1, m2, b2):
     # Calculate x for the point where two equations:
     # y = (m1 * x) + b1 and y = (m2 * x) + b2 intersect.
-
+    #(m1*x)+b1 = (m2*x)+b2
+    #(m1*x)-(m2*x) = b2-b1
+    #(m1-m2)*x = b2-b1
+    #x = (b2-b1)/(m1-m2)
 
     x = (b2-b1)/(m1-m2) #replace this with your calculation for x
     return x
@@ -35,8 +38,7 @@ def intersectionoftwolines_y(m1, b1, m2, b2):
     # Calculate y for the point where two equations:
     # y = (m1 * x) + b1 and y = (m2 * x) + b2 intersect.
 
-
-    y = 0 #replace this with your calculation for y
+    y = (m1*((b2-b1)/(m1-m2)))+b1 #replace this with your calculation for y
     return y
 
 
