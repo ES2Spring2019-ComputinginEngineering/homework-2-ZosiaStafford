@@ -76,9 +76,7 @@ def areaofatriangle(m1, b1, m2, b2, m3, b3):
     b=distancebetweenpoints(x2, y2, x3, y3)
     c=distancebetweenpoints(x3, y3, x1, y1)
 
-    heronsformula(a, b, c)
-
-    area = math.sqrt(((a+b+c)/2)*(((a+b+c)/2)-a)*(((a+b+c)/2)-b)*(((a+b+c)/2)-c)) #replace this with your calculation for area
+    area = heronsformula(a, b, c) #replace this with your calculation for area
     return area
 
 
