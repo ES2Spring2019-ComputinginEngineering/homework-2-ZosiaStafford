@@ -53,10 +53,9 @@ def distancebetweenpoints(x1, y1, x2, y2):
 def heronsformula(a, b, c):
     # Calculate the area of a triangle with three known side lengths.
     # You may want to look up Heron's formula online.
+    # Heron's formula: S = (a+b+c/2), area = sqrt(s(s-a)(s-b)(s-c))
 
-
-
-    area = 0 #replace this with your calculation for area
+    area = math.sqrt(((a+b+c)/2)*(((a+b+c)/2)-a)*(((a+b+c)/2)-b)*(((a+b+c)/2)-c)) #replace this with your calculation for area
     return area
 
 def areaofatriangle(m1, b1, m2, b2, m3, b3):
