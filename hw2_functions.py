@@ -6,8 +6,10 @@
 #*****************************************
 # YOUR NAME: Zosia Stafford
 # NUMBER OF HOURS TO COMPLETE: 3
-# YOUR COLLABORATION STATEMENT(s): Recieved help from Jenn on calling functions
-#
+# YOUR COLLABORATION STATEMENT(s):
+#Recieved help from Jenn on calling functions
+#Worked with Sofia Levy on extra credit, with assistance from Jenn
+
 #*****************************************
 
 #In this homework,the ultimate goal is to create a function called areaofatriangle,
